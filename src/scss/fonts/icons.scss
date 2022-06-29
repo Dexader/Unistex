@@ -14,3 +14,11 @@
 		display: block;
 	}
 }
+
+._icon-arrow-down:before {
+  content: "\e900";
+  color: #fff;
+}
+._icon-search:before {
+  content: "\e901";
+}
