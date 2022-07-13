@@ -1,3 +1,235 @@
 //====================================================================================================
 
+.whoweare {
+	background: url("@img/whoweare/bg.png") center / cover no-repeat;
+	@include adaptiveValue("padding-top", 118, 20);
+	@include adaptiveValue("padding-bottom", 117, 20);
+
+	&__container {
+	}
+
+	&__body {
+		display: grid;
+		grid-template-columns: 1fr percent(557, 1109);
+
+		@media (max-width: $tablet) {
+			display: flex;
+			flex-wrap: wrap;
+			row-gap: rem(15);
+		}
+	}
+
+	&__content {
+		@include adaptiveValue("padding-top", 93, 0);
+
+		@media (max-width: $tablet) {
+			width: 100%;
+			text-align: center;
+		}
+	}
+
+	&__title {
+		&:not(:last-child) {
+			margin-bottom: em(50, 36);
+		}
+	}
+
+	&__text {
+		&:not(:last-child) {
+			margin-bottom: em(45, 16);
+		}
+
+		p {
+			&:not(:last-child) {
+				margin-bottom: em(28, 16);
+			}
+		}
+	}
+
+	&__button {
+		background-color: $secondColor;
+	}
+}
+.images-whoweare {
+	position: relative;
+
+	@media (max-width: $tablet) {
+		width: 100%;
+		position: static;
+		display: flex;
+		flex-wrap: wrap;
+	}
+
+	@media (max-width: $mobileSmall) {
+		row-gap: rem(15);
+	}
+
+	&__top {
+		position: absolute;
+		top: 0;
+		right: percent(75, 557);
+		&:not(:last-child) {
+			margin-bottom: em(10, 16);
+		}
+
+		@media (max-width: $tablet) {
+			position: static;
+			display: flex;
+			width: 50%;
+			padding: 0;
+			&:not(:last-child) {
+				margin-bottom: em(0, 16);
+			}
+		}
+
+		@media (max-width: $mobileSmall) {
+			width: 100%;
+		}
+	}
+
+	&__bottom {
+		position: absolute;
+		bottom: percent(-15, 435);
+		right: 0;
+		transform: translate(percent(30, 350), 0);
+
+		@media (max-width: $tablet) {
+			position: static;
+			display: flex;
+			width: 50%;
+			padding: 0;
+			transform: translate(0px, 0px);
+		}
+
+		@media (max-width: $mobileSmall) {
+			width: 100%;
+		}
+	}
+}
+
 //====================================================================================================
+
+.wedo {
+	position: relative;
+	background-color: #333333;
+	@include adaptiveValue("padding-top", 44, 15);
+	@include adaptiveValue("padding-bottom", 116, 15);
+
+	&__body {
+		display: flex;
+		justify-content: space-around;
+		position: relative;
+
+		@media (max-width:$mobileSmall){
+			position: static;
+			flex-direction: column;
+			flex-wrap: wrap;
+			justify-content: center;
+		}
+	}
+
+	&__line {
+			position: absolute;
+			left: 19.5%;
+			top: -10%;
+			opacity: 0.5;
+
+			&_2 {
+				left: 54%;
+			}
+
+			@media (max-width:$mobileSmall){
+				display: none; 
+			}
+		}
+
+	&__item {
+		@include adaptiveValue("padding-top", 57, 15);
+		text-align: center;
+		align-items: center;
+
+		@media (max-width:$mobileSmall){
+			display: flex;
+			flex-wrap: wrap;
+			width: 100%; 
+		}
+	}
+
+	&__image {
+		flex: 1 1 auto;
+		background-color: #333;@include adaptiveValue("margin-bottom", 38, 17);
+	}
+
+	&__title {
+		color: #e8e8e8;
+		@include adaptiveValue("font-size", 36, 16);
+
+		@media (max-width:$mobileSmall){
+			width: 100%;
+		}
+	}
+}
+
+//=========================================================================================================================
+
+.travel {
+	display: flex;
+	flex-direction: column;
+
+		&__item {
+			background: url('@img/travelwithus/1.png') center no-repeat;
+
+			&_2 {
+				background: url('@img/travelwithus/2.png') center no-repeat;
+			}
+		}
+
+		&__body {
+			@include adaptiveValue("padding-top", 225, 55);
+			@include adaptiveValue("padding-bottom", 99, 55);
+
+			&_2 {
+				display: flex;
+				justify-content: end;
+			}
+		}
+
+		&__card {
+			
+		}
+}
+.card {
+	flex-direction: column;
+	max-width: rem(543);
+	background: #232323;
+	opacity: 0.9;
+	@include adaptiveValue("padding-top", 49, 15);
+	@include adaptiveValue("padding-bottom", 50, 15);
+	@include adaptiveValue("padding-left", 30, 15);
+	@include adaptiveValue("padding-right", 30, 15);
+
+		&__country {
+			letter-spacing: 1.5px;
+			font-size: rem(20);
+			line-height: math.div(26, 20);
+			color: #E8E8E8;
+			&:not(:last-child) {margin-bottom: em(23, 20);}
+		}
+
+		&__title {
+			font-size: rem(20);
+			line-height: math.div(26, 20);
+			text-transform: uppercase;
+			&:not(:last-child) {margin-bottom: em(13, 20);}
+		}
+
+		&__text {
+			letter-spacing: normal;
+			&:not(:last-child) {margin-bottom: em(46, 16);}
+		}
+
+		&__button {
+			background-color: $secondColor;
+		}
+}
+

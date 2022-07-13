@@ -1,13 +1,12 @@
 //====================================================================================================
 
 .header {
+	&__main {
+		background: url("@img/main.png") top / cover no-repeat;
+	}
 
-		&__main {
-			background: url('@img/main.png') top / cover no-repeat;
-		}
-
-		&__menu {
-		}
+	&__bottom {
+	}
 }
 .main-header {
 	display: flex;
@@ -17,50 +16,230 @@
 	@include adaptiveValue("padding-top", 267, 89);
 	@include adaptiveValue("padding-bottom", 132, 44);
 
-		
-		&__title {
-			&:not(:last-child) {margin-bottom: em(11, 48);}
-			font-weight: 700;
-			font-size: rem(48);
-			line-height: math.div(26, 48);
-			text-transform: uppercase;
-			letter-spacing: 4.8px;
+	&__title {
+		&:not(:last-child) {
+			margin-bottom: em(11, 48);
+		}
+		font-weight: 700;
+		@include adaptiveValue("font-size", 48, 20);
+		line-height: math.div(26, 48);
+		text-transform: uppercase;
+		letter-spacing: rem(4.8);
+	}
+
+	&__text {
+		@include adaptiveValue("font-size", 22, 15);
+		line-height: math.div(26, 22);
+		letter-spacing: rem(6.82);
+		&:not(:last-child) {
+			margin-bottom: em(48, 22);
+		}
+	}
+
+	&__search {
+		&:not(:last-child) {
+			margin-bottom: em(108, 14);
+		}
+	}
+
+	&__scroll {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		position: relative;
+	}
+
+	&__button {
+		display: flex;
+		justify-content: center;
+		&::before {
+			position: absolute;
+			bottom: 0;
+			font-size: rem(10);
+			line-height: math.div(26, 10);
 		}
 
-		&__text {
-			font-size: rem(22);
-			line-height: math.div(26, 22);
-			letter-spacing: 6.82px;
-			&:not(:last-child) {margin-bottom: em(48, 22);}
+		span {
+			font-size: rem(14);
+			line-height: math.div(26, 14);
+			letter-spacing: rem(2.8);
+			@include adaptiveValue("padding-bottom", 20, 12);
 		}
-
-		&__search {
-		}
-
-		&__scroll {
-		}
+	}
 }
 .search-main-header {
+	position: relative;
+	display: flex;
+	margin-left: rem(20);
 
-		&__button {
+	&__button {
+		display: flex;
+		gap: rem(15);
+		height: 100%;
+		justify-content: center;
+		align-items: center;
+		flex-direction: row-reverse;
+		position: absolute;
+		top: 0;
+		right: 0;
+		background-color: #5474fd;
+		border: 2px solid #ffffff;
+		border-left: none;
+		padding: 0 rem(18) 0 rem(35);
+		@media (max-width: $mobile) {
+			padding: 0 rem(6) 0 rem(8);
+			background-color: transparent;
+			color: #999999;
 		}
 
-		&__input {
+		&::before {
+			@include adaptiveValue("font-size", 21, 17);
 		}
+
+		span {
+			font-family: Aleo;
+			text-transform: uppercase;
+			font-size: rem(14);
+			line-height: math.div(26, 14);
+			letter-spacing: rem(1.4);
+
+			@media (max-width: $mobile) {
+				display: none;
+			}
+		}
+	}
+
+	&__input {
+		width: 100%;
+		height: rem(63);
+		padding: 0 rem(394) 0 rem(113);
+		outline: none;
+		@media (max-width: $mobile) {
+			padding: 0 rem(2) 0 rem(8);
+			height: rem(40);
+		}
+		&:focus {
+			box-shadow: 1px 1px 8px 7px rgba(0, 0, 0, 0.3);
+		}
+		&::placeholder {
+			overflow: visible;
+			color: #999999;
+			@include adaptiveValue("font-size", 14, 10);
+			line-height: math.div(26, 14);
+			letter-spacing: rem(2.8);
+		}
+	}
 }
 
+//=========================================================================================================================
+
+.bottom-header {
+	@include adaptiveValue("padding-top", 31, 18);
+	@include adaptiveValue("padding-bottom", 31, 18);
+	background-color: $secondColor;
+
+	&__container {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		gap: rem(20);
+		min-height: 20px;
+	}
+
+	&__logo {
+		font-weight: 700;
+		@include adaptiveValue("font-size", 24, 18);
+		line-height: math.div(26, 24);
+		letter-spacing: 2.4px;
+		text-transform: uppercase;
+	}
+
+	&__menu {
+		flex: 1 1 auto;
+		align-items: center;
+	}
+
+	@media (max-width:$tablet){
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+	}
+}
+
+//=========================================================================================================================
+
+.menu-bottom-header {
+	
+	&__list {
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: flex-end;
+		row-gap: 5px;
+		@include adaptiveValue("column-gap", 37, 12);
+
+		@media (max-width:$tablet){
+			flex-direction: column;
+			align-items: center;
+			justify-content: center;
+			row-gap: 25px;
+		}
+	}
+
+	&__item {
+	}
+
+	&__link {
+		font-family: "Aleo";
+		font-size: rem(14);
+		text-transform: uppercase;
+		line-height: math.div(26, 14);
+		color: #fff;
+
+		@media (max-width:$tablet){
+			@include adaptiveValue("font-size", 30, 18, 992, 320, 1);
+		}
+	}
+}
+
+//=========================================================================================================================
+
+.menu {
+	&__body {
+		@media (max-width:$tablet){
+			position: fixed;
+			width: 100%;
+			height: 100%;
+			top: 0;
+			right: -100%;
+			overflow: auto;
+			background-color: #000;
+			padding: rem(200) rem(15);
+			transition: right 0.3s ease 0s;
+			z-index: 4;
+			.menu-open & {
+				right: 0;
+			}
+		}
+	}
+
+	@media (max-width:$tablet){
+		display: block;
+		flex: 0 0 30px;
+	}
+}
 
 //====================================================================================================
 
 //Burger
-/*
+
 .icon-menu {
 	display: none;
-	@media (max-width: $mobile) {
+	@media (max-width: $tablet) {
 		display: block;
 		position: relative;
-		width: rem(30);
-		height: rem(18);
+		width: rem(40);
+		height: rem(22);
 		cursor: pointer;
 		z-index: 5;
 		span,
@@ -72,7 +251,7 @@
 			position: absolute;
 			width: 100%;
 			height: rem(2);
-			background-color: #000;
+			background-color: #fff;
 		}
 		&::before {
 			top: 0;
@@ -101,4 +280,3 @@
 		}
 	}
 }
-*/
