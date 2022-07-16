@@ -1,3 +1,38 @@
 //====================================================================================================
 
+.footer {
+	background-color: #232323;
+	@include adaptiveValue("padding-top", 53, 20);
+	@include adaptiveValue("padding-bottom", 53, 20);
+
+		&__body {
+			@include adaptiveValue("padding-top", 69, 0);
+			text-align: center;
+		}
+
+		&__title {
+			font-weight: 700;
+			font-size: rem(24);
+			line-height: math.div(26, 24);
+			text-transform: uppercase;
+			letter-spacing: 3.36px;
+			&:not(:last-child) {margin-bottom: em(8, 24);}
+		}
+
+		&__text {
+			&:not(:last-child) {margin-bottom: em(20, 16);}
+		}
+
+		&__social {
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			gap: rem(24);
+		}
+
+		&__item {
+		}
+}
+
+
 //====================================================================================================

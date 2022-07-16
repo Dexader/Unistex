@@ -5,9 +5,25 @@
 	})
 	<body>
 		<div class="wrapper">
+			<section class="main main-header">
+				<div class="main-header__container">
+					<div class="main-header__title">Bhromaon</div>
+					<div class="main-header__text">Safe Travel Anywhere</div>
+					<div class="main-header__search">
+						<form action="#" class=" search-main-header">
+							<input autocomplete="off" type="text" name="form[]" data-error="Ошибка"
+								placeholder="Search Your Travel Destination" class="search-main-header__input">
+							<button type="submit" class="search-main-header__button _icon-search"><span>Search</span></button>
+						</form>
+					</div>
+					<a data-goto="#whoweare" class="main-header__scroll">
+						<button type="button" class="main-header__button _icon-arrow-down"><span>Scroll Down</span></button>
+					</a>
+				</div>
+			</section>
 			@@include('html/_header.htm',{})
 			<main class="page">
-				<section class="page__whoweare whoweare">
+				<section id="whoweare" class="page__whoweare whoweare">
 					<div class="whoweare__container">
 						<div class="whoweare__body">
 							<div class="whoweare__content">
@@ -25,15 +41,9 @@
 						</div>
 						</div>
 				</section>
-				<section class="page__wedo wedo">
+				<section id="wedo" class="page__wedo wedo">
 					<div class="wedo__container">
 						<div class="wedo__body">
-							<svg class="wedo__line">
-								<circle stroke-width="1" stroke="white" fill="none" cx="50%" cy="270" r="250" />
-							</svg>
-							<svg class="wedo__line wedo__line_2">
-								<circle stroke-width="1" stroke="white" fill="none" cx="50%" cy="270" r="250" />
-							</svg>
 							<a href="" class="wedo__item">
 								<div class="wedo__image">
 									<img src="@img/whatwedo/search.svg" alt="">
@@ -55,7 +65,7 @@
 						</div>
 					</div>
 				</section>
-				<section class="page__travel travel">
+				<section id="travel" class="page__travel travel">
 					<div class="travel__item">
 						<div class="travel__container">
 							<div class="travel__body">
@@ -88,8 +98,56 @@
 				<section class="page__reviews reviews">
 					<div class="reviews__container">
 						<div class="reviews__body">
-							<div class="reviews__title title"></div>
-							
+							<div class="reviews__title title">What Our Tourist Say</div>
+							<div class="reviews__slider swiper">
+								<div class="reviews__wrapper swiper-wrapper">
+									<div class="reviews__slide swiper-slide slide-reviews">
+										<div class="slide-reviews__content">
+											<div class="slide-reviews__image">
+												<img src="@img/reviews/1.png" alt="man">
+											</div>
+											<div class="slide-reviews__comment">
+												<div class="slide-reviews__title">Sam Sumon</div>
+												<div class="slide-reviews__text text">
+													<span>But I must explain to you how all this mistaken idea of account to denouncinpleasure and praising pain But I must explain to you how all this mistaken idea of account to nai denouncing pleasure and praising pain was account born and I account will give you a complete account of the system was account born and I account will give you a nai the complete account of the system</span>
+												</div>
+											</div>
+										</div>
+									</div>
+									<div class="reviews__slide swiper-slide slide-reviews">
+										<div class="slide-reviews__content">
+											<div class="slide-reviews__image">
+												<img src="@img/reviews/1.png" alt="man">
+											</div>
+											<div class="slide-reviews__comment">
+												<div class="slide-reviews__title">Sam Sumon</div>
+												<div class="slide-reviews__text text">
+													<span>But I must explain to you how all this mistaken idea of account to denouncinpleasure and praising
+														pain But I must explain to you how all this mistaken idea of account to nai denouncing pleasure and
+														praising pain was account born and I account will give you a complete account of the system was
+														account born and I account will give you a nai the complete account of the system</span>
+												</div>
+											</div>
+										</div>
+									</div>
+									<div class="reviews__slide swiper-slide slide-reviews">
+										<div class="slide-reviews__content">
+											<div class="slide-reviews__image">
+												<img src="@img/reviews/1.png" alt="man">
+											</div>
+											<div class="slide-reviews__comment">
+												<div class="slide-reviews__title">Sam Sumon</div>
+												<div class="slide-reviews__text text">
+													<span>But I must explain to you how all this mistaken idea of account to denouncinpleasure and praising
+														pain But I must explain to you how all this mistaken idea of account to nai denouncing pleasure and
+														praising pain was account born and I account will give you a complete account of the system was
+														account born and I account will give you a nai the complete account of the system</span>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
 						</div>
 					</div>
 				</section>
