@@ -1,123 +1,16 @@
-//=========================================================================================================================
-
-.header {
-	@include adaptiveValue("padding-top", 31, 18);
-	@include adaptiveValue("padding-bottom", 31, 18);
-	background-color: $secondColor;
-
-	&._header-scroll {
-		position: fixed;
-		top: -200%;
-		background: #5474FD;
-	}
-
-	&._header-show {
-		transition: top 0.3s ease 0s;
-		top: 0;
-		width: 100%;
-		z-index: 10;
-	}
-
-	&__container {
-			display: flex;
-			align-items: center;
-			justify-content: space-between;
-			gap: rem(20);
-			min-height: 20px;
-		}
-
-		&__logo {
-			font-weight: 700;
-			@include adaptiveValue("font-size", 24, 18);
-			line-height: math.div(26, 24);
-			letter-spacing: 2.4px;
-			text-transform: uppercase;
-		}
-
-		&__menu {
-			flex: 1 1 auto;
-			align-items: center;
-		}
-
-		@media (max-width:$tablet){
-		position: absolute;
-		top: 0;
-		left: 0;
-		width: 100%;
-	}
-}
-.menu-header {
-
-		&__list {
-			display: flex;
-			flex-wrap: wrap;
-			justify-content: flex-end;
-			row-gap: 5px;
-			@include adaptiveValue("column-gap", 37, 12);
-
-		@media (max-width:$tablet){
-			flex-direction: column;
-			align-items: center;
-			justify-content: center;
-			row-gap: 25px;
-		}
-		}
-
-		&__item {
-		}
-
-		&__link {
-			font-family: "Aleo";
-			font-size: rem(14);
-			text-transform: uppercase;
-			line-height: math.div(26, 14);
-			color: #fff;
-
-		@media (max-width:$tablet){
-			@include adaptiveValue("font-size", 30, 18, 992, 320, 1);
-		}
-		}
-}
-
-
-//=========================================================================================================================
-
-.menu {
-	&__body {
-		@media (max-width:$tablet){
-			position: fixed;
-			width: 100%;
-			height: 100%;
-			top: 0;
-			right: -100%;
-			overflow: auto;
-			background-color: #000;
-			padding: rem(200) rem(15);
-			transition: right 0.3s ease 0s;
-			z-index: 4;
-			.menu-open & {
-				right: 0;
-			}
-		}
-	}
-
-	@media (max-width:$tablet){
-		display: block;
-		flex: 0 0 30px;
-	}
-}
+//====================================================================================================
 
 //====================================================================================================
 
 //Burger
-
+/*
 .icon-menu {
 	display: none;
-	@media (max-width: $tablet) {
+	@media (max-width: $mobile) {
 		display: block;
 		position: relative;
-		width: rem(40);
-		height: rem(22);
+		width: rem(30);
+		height: rem(18);
 		cursor: pointer;
 		z-index: 5;
 		span,
@@ -129,7 +22,7 @@
 			position: absolute;
 			width: 100%;
 			height: rem(2);
-			background-color: #fff;
+			background-color: #000;
 		}
 		&::before {
 			top: 0;
@@ -158,3 +51,4 @@
 		}
 	}
 }
+*/

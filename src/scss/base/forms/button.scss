@@ -3,21 +3,12 @@
 
 .button {
 	display: inline-flex;
-	padding: rem(21) rem(40) rem(16);
-	@include adaptiveValue("font-size", 16, 14);
-	line-height: math.div(26, 16);
-	text-transform: uppercase;
+	padding: 0px 0px;
 	@media (any-hover: hover) {
 		&:hover {
-			background-color: #496BFE;
 		}
 	}
 	&._fw {
-		width: 100%;
-	}
-
-	@media (max-width:$tablet){
-		display: block;
 		width: 100%;
 	}
 }
