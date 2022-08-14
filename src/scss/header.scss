@@ -1,5 +1,87 @@
 //====================================================================================================
 
+.header {
+	position: absolute;
+	background-color: transparent;
+	width: 100%;
+	z-index: 30;
+
+		&__container {
+			display: flex;
+			justify-content: space-between;
+			align-items: center;
+			@include adaptiveValue("padding-left", 415, 12);
+			@include adaptiveValue("padding-right", 363, 0);
+			@include adaptiveValue("padding-top", 44, 56);
+			@include adaptiveValue("padding-bottom", 44, 56);
+
+			@media (max-width:$tablet){
+				align-items: start;
+			}
+		}
+
+		&__logo {
+			&::before{
+				@include adaptiveValue("font-size", 38, 34);
+			}
+		}
+
+		&__content {
+			display: flex;
+			align-items: center;
+			gap: rem(39);
+
+			@media (max-width:$tablet){
+				gap: 0;
+				flex-wrap: wrap;
+				justify-content: center;
+			}
+		}
+
+		&__reg {
+			display: flex;
+			cursor: pointer;
+		}
+
+		&__icon {
+			display: none;
+
+			@media (max-width:$tablet){
+				display: block;
+				cursor: pointer;
+			}
+		}
+
+		&__item {
+			padding: 0 rem(10);
+			&:not(:last-child) {border-right: 1px solid #fff;}
+
+			@media (max-width:$tablet){
+				display: none;
+			}
+		}
+
+		&__lang {
+			display: inline-flex;
+			flex-direction: row-reverse;
+			align-items: center;
+			font-size: rem(14);
+			line-height: math.div(17, 14);
+			text-transform: uppercase;
+
+			@media (max-width:$tablet){
+				width: 100%;
+			}
+		}
+
+		&__form {
+			display: block;
+			background-color: transparent;
+			color: #fff;
+		}
+}
+
+
 //====================================================================================================
 
 //Burger

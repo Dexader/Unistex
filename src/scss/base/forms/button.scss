@@ -3,12 +3,28 @@
 
 .button {
 	display: inline-flex;
-	padding: 0px 0px;
+	
+	color: #192227;
+	font-weight: 700;
+	font-size: rem(14);
+	line-height: math.div(17, 14);
+	text-transform: uppercase;
+	background-color: transparent;
+	border-radius: 10px;
+	transition: all 0.3s ease 0s;
+	box-shadow: 0 0 40px 40px #4FFFCA inset, 0 0 0 0 #4FFFCA;
 	@media (any-hover: hover) {
 		&:hover {
+			box-shadow: 0 0 10px 0 #4FFFCA inset, 0 0 10px 4px #4FFFCA;
+			color: #fff;
 		}
 	}
 	&._fw {
 		width: 100%;
+	}
+
+	@media (max-width:$tablet){
+		width: 100%;
+		justify-content: center;
 	}
 }
